@@ -1,13 +1,14 @@
 pipeline {
     agent any
     tools {
-        maven "maven3.8.5"
-    }
+  maven 'maven3.8.7'
+ }
+
 
     stages {
         stage(GitCheckOut){
             steps{
-                gitbranch: '', gitcredentials: '', giturl: ''
+                git branch: 'main', credentialsId: '026f781b-368d-4626-ab66-08d71d1d7d82', url: 'https://github.com/gmk1995/Java-Web-Calculator.git'
             }
         }
 
@@ -27,7 +28,7 @@ pipeline {
                 sh "mvn deploy"
             }
         }
-
+/*
         stage('DeployToTomcatServer') {
             steps{
                 sshagent(['']){
@@ -36,4 +37,4 @@ pipeline {
             }
         }
     }
-}
+} */
