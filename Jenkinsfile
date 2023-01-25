@@ -35,6 +35,6 @@ pipeline {
                     sh "scp -o StrictHostKeyChecking=no target/.war username@PublicIpAddress:/opt/apache-tomcat/webapps"
                 }
             }
-        }
-    }*/
+        }*/
+    }
 } 
