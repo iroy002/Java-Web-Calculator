@@ -28,13 +28,13 @@ pipeline {
                 sh "mvn deploy"
             }
         }
-/*
+
         stage('DeployToTomcatServer') {
             steps{
-                sshagent(['']){
-                    sh "scp -o StrictHostKeyChecking=no target/.war username@PublicIpAddress:/opt/apache-tomcat/webapps"
+                sshagent(['tomcat-ssh-connection']) {
+                    sh "scp -o StrictHostKeyChecking=no target/calculator.war ubuntu@http://15.207.115.58:8081/:/opt/apache-tomcat/webapps"
                 }
             }
-        }*/
+        }
     }
 } 
