@@ -1,0 +1,29 @@
+- project_root
+   |- pom.xml
+   |- src
+      |- main
+         |- java
+            |- com
+               |- example
+                  |- controller
+                     |- CalculatorController.java
+         |- webapp
+            |- WEB-INF
+               |- views
+                  |- calculator.jsp
+               |- web.xml
+               |- dispatcher-servlet.xml
+
+
+pom.xml file should be in the project root directory.
+src is the standard directory for your source files.
+Within src, main is the standard directory for your application's main source files
+java is the directory for your Java source files, within that controller package contains the CalculatorController java class
+webapp is the standard directory for your web application files like JSP, CSS and JS files.
+WEB-INF is a special directory that contains configuration files and other resources that should not be directly served to clients.
+views contains the calculator.jsp file
+web.xml and dispatcher-servlet.xml also should be in the WEB-INF directory
+
+If the context root is correct, try to access the application using the following URL:
+
+http://<server-name>:<port-number>/calculator/calculate
