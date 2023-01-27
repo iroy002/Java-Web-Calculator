@@ -31,7 +31,7 @@ pipeline {
 
         stage('DeployToTomcatServer') {
             steps{
-                sshagent(['Tomcat-ssh-connection-key']) {
+                sshagent(['Tomcat-ssh-connection-key', ignoreMissing: true]) {
                     sh "scp -o StrictHostKeyChecking=no target/calculator.war ec2-user@13.233.121.198:/opt/apache-tomcat-9.0.71/webapps/calculator.war"
                 }
             }
