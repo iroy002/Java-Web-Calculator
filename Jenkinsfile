@@ -1,40 +1,46 @@
 pipeline {
     agent any
-    tools {
-  maven 'maven3.8.7'
- }
 
+    options {
+        buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+        timestamps()
+    }   
+
+    environment {     
+        DOCKERHUB_CREDENTIALS= credentials('Docker-Hub-Credentials')     
+    }
 
     stages {
-        stage(GitCheckOut){
-            steps{
-                git branch: 'main', credentialsId: '026f781b-368d-4626-ab66-08d71d1d7d82', url: 'https://github.com/gmk1995/Java-Web-Calculator.git'
+        stage('GitCheckOut') {
+            steps {
+                git branch: 'main', credentialsId: 'GitHub_Credentials', url: 'https://github.com/gmk1995/Java-Web-Calculator.git'
             }
         }
 
-        stage('Build'){
-            steps{
-                sh "mvn clean package"
-            }
-        }
-        stage('SonarQubeReport'){
-            steps{
-                sh "mvn sonar:sonar"
+        stage('DockerBuild') {
+            steps {
+                sh 'docker build -t gmk1995/java-web-calculator:v1 .'
             }
         }
 
-        stage('UploadToNexusArtifact'){
-            steps{
-                sh "mvn deploy"
+        stage('DockerPush') {
+            steps {
+                sh "echo DOCKERHUB_CREDENTIALS | docker login -u gmk1995 --password-stdin"
+                sh "docker push gmk1995/java-web-calculator:v1"
             }
         }
 
-        stage('DeployToTomcatServer') {
-            steps{
-                sshagent(['Tomcat-ssh-connection-key'],  ignoreMissing: true) {
-                    sh "scp -o StrictHostKeyChecking=no target/calculator.war ec2-user@13.233.121.198:/opt/apache-tomcat-9.0.71/webapps/calculator.war"
-                }
+        stage('KubernetesDeployment') {
+            steps {
+                sh " kubectl apply -f java-web-calculator-deployment.yaml"
             }
         }
     }
-} 
+
+    post {
+        always {
+            sh "docker logout"
+        }
+    }
+
+}
