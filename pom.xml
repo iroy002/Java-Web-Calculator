@@ -9,7 +9,7 @@
     <properties>
         <spring.version>5.3.9</spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <sonar.host.url>http://98.80.128.78:9000</sonar.host.url>
+        <sonar.host.url>http://34.204.15.85:9000</sonar.host.url>
         <sonar.login>admin</sonar.login>
         <sonar.password>password</sonar.password>
     </properties>
@@ -63,12 +63,12 @@
         <repository>
             <id>nexus</id>
             <name>Java-Web-Calculator-Release</name>
-            <url>http://3.85.51.182:8081/repository/zepto-releases/</url>
+            <url>http://18.234.45.222:8081/repository/zepto-releases/</url>
         </repository>
         <snapshotRepository>
             <id>nexus</id>
             <name>Java-Web-Calculator-Snapshot</name>
-            <url>http://3.85.51.182:8081/repository/zepto-snapshots/</url>
+            <url>http://18.234.45.222:8081/repository/zepto-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
     <build>
