@@ -63,12 +63,13 @@
         <repository>
             <id>nexus</id>
             <name>Java-Web-Calculator-Release</name>
-            <url>http://18.234.45.222:8081/repository/zepto-releases/</url>
+            <url>http://44.223.192.70:8081/repository/zepto-releases/</url>
         </repository>
+             
         <snapshotRepository>
             <id>nexus</id>
             <name>Java-Web-Calculator-Snapshot</name>
-            <url>http://18.234.45.222:8081/repository/zepto-snapshots/</url>
+            <url>http://44.223.192.70:8081/repository/zepto-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
     <build>
