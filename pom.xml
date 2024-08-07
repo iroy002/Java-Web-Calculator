@@ -60,11 +60,10 @@
         </dependency>
     </dependencies>
     <distributionManagement>
-        <repository>
-            <id>nexus</id>
-            <name>Java-Web-Calculator-Release</name>
-            <url>http://44.223.192.70:8081/repository/zepto-release/</url>
-        </repository>
+<repository>
+    <id>nexus</id>
+    <url>http://44.223.192.70:8081/repository/zepto-release/</url>
+  </repository>
              
         <snapshotRepository>
             <id>nexus</id>
