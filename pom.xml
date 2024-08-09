@@ -79,9 +79,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <altReleaseDeploymentRepository>release-repo::default::http://44.223.192.70:8081/repository/zepto-release/</altReleaseDeploymentRepository>
-                <altSnapshotDeploymentRepository>snapshot-repo::default::http://44.223.192.70:8081/repository/zepto-snapshot/</altSnapshotDeploymentRepository>
-                    
+                     <source>1.8</source>
+                    <target>1.8</target>          
                 </configuration>
             </plugin>
             <plugin>
