@@ -60,11 +60,11 @@
         </dependency>
     </dependencies>
     <distributionManagement>
-<!-- <repository>
+ <repository>
     <id>nexus</id>
      <name>zepto-release</name>    
     <url>http://44.223.192.70:8081/repository/zepto-release/</url>
-  </repository> -->
+  </repository>
          <snapshotRepository>
             <id>nexus</id>
             <name>zepto-snapshot</name>
