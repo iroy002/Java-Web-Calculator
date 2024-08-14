@@ -4,7 +4,7 @@
     <groupId>com.example</groupId>
     <artifactId>calculator</artifactId>
     <packaging>war</packaging>
-    <version>1.5-SNAPSHOT</version>
+    <version>1.6-SNAPSHOT</version>
     <name>calculator</name>
     <properties>
         <spring.version>5.3.9</spring.version>
