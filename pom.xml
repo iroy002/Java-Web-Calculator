@@ -4,7 +4,7 @@
     <groupId>com.example</groupId>
     <artifactId>calculator</artifactId>
     <packaging>war</packaging>
-    <version>1.7-RELEASE</version>
+    <version>1.0-RELEASE</version>
     <name>calculator</name>
     <properties>
         <spring.version>5.3.9</spring.version>
@@ -64,12 +64,12 @@
  <repository>
     <id>nexus</id>
      <name>zepto-release</name>    
-    <url>http://44.223.192.70:8081/repository/zepto-release/</url>
+    <url>http://54.187.152.8:8081/repository/zepto-release/</url>
   </repository>
          <snapshotRepository>
             <id>nexus</id>
             <name>zepto-snapshot</name>
-            <url>http://44.223.192.70:8081/repository/zepto-snapshot/</url>
+            <url>http://54.187.152.8:8081/repository/zepto-snapshot/</url>
         </snapshotRepository>
     </distributionManagement>
     <build>
