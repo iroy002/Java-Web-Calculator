@@ -93,13 +93,7 @@
                 </configuration>
             </plugin>
                  
-          <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>6.1.0.4477</version>
-          </plugin>
-                          
-                <groupId>org.apache.maven.plugins</groupId>
+              <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.2.3</version>
                 <configuration>
