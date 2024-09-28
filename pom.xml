@@ -1,17 +1,18 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>calculator</artifactId>
     <packaging>war</packaging>
-    <version>1.0-RELEASE</version>
+    <version>1.0-SNAPSHOT</version>
     <name>calculator</name>
     <properties>
         <spring.version>5.3.9</spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <sonar.host.url>http://35.163.210.122:9000/</sonar.host.url>
+        <sonar.host.url>http://3.110.40.247:9000/</sonar.host.url>
         <sonar.login>admin</sonar.login>
-        <sonar.password>password</sonar.password>
+        <sonar.password>gmk@2023</sonar.password>
     </properties>
     <dependencies>
         <dependency>
@@ -31,11 +32,6 @@
             <artifactId>junit-jupiter-engine</artifactId>
             <version>5.7.0</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0-M5</version>
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
@@ -63,12 +59,12 @@
         <repository>
             <id>nexus</id>
             <name>Java-Web-Calculator-Release</name>
-            <url>http://54.187.152.8:8081/repository/zepto-release/</url>
+            <url>http://13.235.18.107:8081/repository/Java-Web-Calculator-Release/</url>
         </repository>
         <snapshotRepository>
             <id>nexus</id>
             <name>Java-Web-Calculator-Snapshot</name>
-            <url>http://54.187.152.8:8081/repository/zepto-snapshot/</url>
+            <url>http://13.235.18.107:8081/repository/Java-Web-Calculator-Snapshot/</url>
         </snapshotRepository>
     </distributionManagement>
     <build>
@@ -99,6 +95,26 @@
                     <warSourceDirectory>src/main/webapp</warSourceDirectory>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.7</version> <!-- Use the latest version -->
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-    </project>
+</project>
